@@ -1,11 +1,11 @@
 package com.chitransh.testrun1;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
           etEmail.getText().toString().equals(registeredEmail) &&
             etPassword.getText().toString().equals(registeredPassword)
         ) {
-          Log.e("----", "Login Successful!");
+          Toast.makeText(getApplicationContext(), "Login Successful!", Toast.LENGTH_SHORT).show();
         } else {
-          Log.e("----", "Email or Password incorrect!");
+          Toast.makeText(getApplicationContext(), "Email or Password incorrect!", Toast.LENGTH_SHORT).show();
         }
       }
     });
