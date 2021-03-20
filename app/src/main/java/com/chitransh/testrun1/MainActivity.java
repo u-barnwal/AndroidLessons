@@ -4,38 +4,41 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+  private final String registeredEmail = "demo@test.com";
+  private final String registeredPassword = "123";
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-//    Button button = findViewById(R.id.button);
+    EditText etEmail = findViewById(R.id.etEmail);
+    EditText etPassword = findViewById(R.id.etPassword);
 
-//    button.setOnClickListener(new View.OnClickListener() {
-//      @Override
-//      public void onClick(View v) {
-//        Log.e("==: ", "Button clicked!");
-//      }
-//    });
+    Button bLogin = findViewById(R.id.bLogin);
 
-//    TextView textView = findViewById(R.id.textView);
-//
-//    textView.setOnClickListener((v) -> {
-//      Log.e("==: ", "Text clicked!");
-//    });
+    TextView tvForgotPassword = findViewById(R.id.tvForgotPassword);
 
-//    textView.setOnClickListener(new View.OnClickListener() {
-//      @Override
-//      public void onClick(View v) {
-//        Log.e("==: ", "Text clicked!");
-//      }
-//    });
+    bLogin.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if (
+          etEmail.getText().toString().equals(registeredEmail) &&
+            etPassword.getText().toString().equals(registeredPassword)
+        ) {
+          Log.e("----", "Login Successful!");
+        } else {
+          Log.e("----", "Email or Password incorrect!");
+        }
+      }
+    });
 
   }
 }
