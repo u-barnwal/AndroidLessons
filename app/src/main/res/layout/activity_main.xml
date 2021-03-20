@@ -31,7 +31,7 @@
     android:layout_height="100dp"
     android:layout_gravity="center"
     android:layout_marginTop="24sp"
-    android:src="@mipmap/ic_launcher" />
+    android:src="@drawable/default_user" />
 
   <EditText
     android:layout_width="match_parent"
@@ -39,7 +39,7 @@
     android:layout_marginTop="24sp"
     android:hint="Email Address"
     android:padding="12dp"
-    android:background="@color/input"
+    android:background="@drawable/bg_input"
     android:inputType="textEmailAddress" />
 
   <EditText
@@ -48,7 +48,7 @@
     android:layout_marginTop="12sp"
     android:hint="Password"
     android:padding="12dp"
-    android:background="@color/input"
+    android:background="@drawable/bg_input"
     android:inputType="textPassword" />
 
   <Button
