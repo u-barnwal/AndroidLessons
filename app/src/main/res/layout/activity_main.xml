@@ -4,20 +4,67 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical"
+  android:padding="24dp"
+  android:background="@color/background"
   tools:context=".MainActivity">
 
   <TextView
-    android:id="@+id/textView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Hello World"
+    android:gravity="center"
+    android:text="@string/company"
+    android:textColor="@color/white"
+    android:textStyle="bold"
     android:textSize="25sp" />
 
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:gravity="center"
+    android:textColor="@color/white"
+    android:text="Login"
+    android:textSize="18sp" />
+
+  <ImageView
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="24sp"
+    android:src="@mipmap/ic_launcher" />
+
+  <EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="24sp"
+    android:hint="Email Address"
+    android:padding="12dp"
+    android:background="@color/input"
+    android:inputType="textEmailAddress" />
+
+  <EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12sp"
+    android:hint="Password"
+    android:padding="12dp"
+    android:background="@color/input"
+    android:inputType="textPassword" />
+
   <Button
-    android:id="@+id/button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="hi"
-    android:textSize="25sp"/>
+    android:layout_gravity="center"
+    android:backgroundTint="#D65DB1"
+    android:layout_marginTop="24dp"
+    android:text="Login" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:gravity="center"
+    android:text="Forgot Password?"
+    android:textColor="@color/link" />
 
 </LinearLayout>

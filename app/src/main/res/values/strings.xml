@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">TestRun1</string>
+
+  <string name="company">Chitransh Computer</string>
 </resources>
