@@ -8,72 +8,16 @@
 
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp">
-
-    <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:text="@string/company"
-      android:textColor="@color/white"
-      android:textSize="25sp"
-      android:textStyle="bold" />
-
-    <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="12dp"
-      android:gravity="center"
-      android:text="Login"
-      android:textColor="@color/white"
-      android:textSize="18sp" />
-
-    <ImageView
-      android:layout_width="100dp"
-      android:layout_height="100dp"
-      android:layout_gravity="center"
-      android:layout_marginTop="24sp"
-      android:src="@drawable/default_user" />
-
-    <EditText
-      android:id="@+id/etEmail"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24sp"
-      android:background="@drawable/bg_input"
-      android:hint="Email Address"
-      android:inputType="textEmailAddress"
-      android:padding="12dp" />
-
-    <EditText
-      android:id="@+id/etPassword"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="12sp"
-      android:background="@drawable/bg_input"
-      android:hint="Password"
-      android:inputType="textPassword"
-      android:padding="12dp" />
 
     <Button
       android:id="@+id/bLogin"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:layout_marginTop="24dp"
-      android:backgroundTint="#D65DB1"
-      android:text="Login" />
-
-    <TextView
-      android:id="@+id/tvForgotPassword"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="12dp"
-      android:gravity="center"
-      android:text="Forgot Password?"
-      android:textColor="@color/link" />
+      android:text="Login Here" />
 
   </LinearLayout>
 
