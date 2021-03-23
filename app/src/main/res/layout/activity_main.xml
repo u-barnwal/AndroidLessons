@@ -6,16 +6,25 @@
   android:orientation="vertical"
   tools:context=".MainActivity">
 
-  <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Hello World"
-    android:textSize="25sp" />
-
   <Button
+    android:id="@+id/bOpenWebsite"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="hi"
+    android:text="Open Website"
+    android:textSize="25sp"/>
+
+  <Button
+    android:id="@+id/bOpenMobile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Open Mobile"
+    android:textSize="25sp"/>
+
+  <Button
+    android:id="@+id/bOpenEmail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Open Email"
     android:textSize="25sp"/>
 
 </LinearLayout>
