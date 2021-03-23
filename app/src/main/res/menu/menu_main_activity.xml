@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:id="@+id/iActionOpen"
+    android:title="Open" />
+
+  <item
+    android:id="@+id/iActionShare"
+    android:title="Share" />
+
+  <item
+    android:id="@+id/iActionExit"
+    android:title="Exit" />
+
+</menu>
