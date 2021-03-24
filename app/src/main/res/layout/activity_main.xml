@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
@@ -8,15 +9,15 @@
 
   <TextView
     style="@style/mainTextView"
-    android:text="To know more visit us at https://google.com"
     android:autoLink="web"
-    android:textColor="@color/black"/>
+    android:text="To know more visit us at https://google.com"
+    android:textColor="@color/black" />
 
   <TextView
     style="@style/mainTextView"
-    android:text="or call us at +91 1234567899"
     android:autoLink="phone"
-    android:textColor="@color/black"/>
+    android:text="or call us at +91 1234567899"
+    android:textColor="@color/black" />
 
   <TextView
     style="@style/mainTextView.error"
@@ -38,10 +39,36 @@
     style="@style/mainTextView"
     android:text="Hello World" />
 
+  <ProgressBar
+    android:id="@+id/pbMain"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    app:backgroundTint="@color/black" />
+
   <Button
+    android:id="@+id/bShowPB"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="hi"
-    android:textSize="25sp"/>
+    android:text="Show PB"
+    android:textSize="25sp" />
+
+  <Button
+    android:id="@+id/bHidePB"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hide PB"
+    android:textSize="25sp" />
+
+  <Switch
+    android:id="@+id/sToggle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:checked="true"
+    android:text="Show More info" />
+
+  <TextView
+    android:id="@+id/tvContent"
+    style="@style/mainTextView"
+    android:text="Hello this is some random text" />
 
 </LinearLayout>
