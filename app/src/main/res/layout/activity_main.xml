@@ -7,6 +7,15 @@
   android:orientation="vertical"
   tools:context=".MainActivity">
 
+  <Spinner
+    android:id="@+id/sPlatform"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@color/secondary"
+    android:entries="@array/platform"
+    android:padding="12dp" />
+
   <TextView
     style="@style/mainTextView"
     android:autoLink="web"
@@ -76,6 +85,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:checked="true"
-    android:text="Show more info"/>
+    android:text="Show more info" />
 
 </LinearLayout>
