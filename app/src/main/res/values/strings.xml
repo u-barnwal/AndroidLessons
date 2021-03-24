@@ -1,3 +1,10 @@
 <resources>
   <string name="app_name">TestRun1</string>
+
+  <string-array name="platform">
+    <item>Android</item>
+    <item>iOS</item>
+    <item>Web</item>
+  </string-array>
+
 </resources>
