@@ -8,7 +8,14 @@
 
   <TextView
     style="@style/mainTextView"
-    android:text="Hello World"
+    android:text="To know more visit us at https://google.com"
+    android:autoLink="web"
+    android:textColor="@color/black"/>
+
+  <TextView
+    style="@style/mainTextView"
+    android:text="or call us at +91 1234567899"
+    android:autoLink="phone"
     android:textColor="@color/black"/>
 
   <TextView
