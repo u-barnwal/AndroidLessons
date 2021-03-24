@@ -2,6 +2,7 @@ package com.chitransh.testrun1;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -31,9 +32,23 @@ public class MainActivity extends AppCompatActivity {
     Switch sToggle = findViewById(R.id.sToggle);
     TextView tvContent = findViewById(R.id.tvContent);
 
+    CheckBox cbMain = findViewById(R.id.cbMain);
+
     sToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        cbMain.setChecked(isChecked);
+        if (isChecked)
+          tvContent.setVisibility(View.VISIBLE);
+        else
+          tvContent.setVisibility(View.GONE);
+      }
+    });
+
+    cbMain.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+      @Override
+      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        sToggle.setChecked(isChecked);
         if (isChecked)
           tvContent.setVisibility(View.VISIBLE);
         else

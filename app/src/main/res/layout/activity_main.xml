@@ -71,4 +71,11 @@
     style="@style/mainTextView"
     android:text="Hello this is some random text" />
 
+  <CheckBox
+    android:id="@+id/cbMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:checked="true"
+    android:text="Show more info"/>
+
 </LinearLayout>
