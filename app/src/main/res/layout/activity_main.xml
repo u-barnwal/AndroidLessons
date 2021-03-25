@@ -4,37 +4,25 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical"
+  android:padding="20dp"
   tools:context=".MainActivity">
 
-  <TextView
-    style="@style/mainTextView"
-    android:text="Hello World"
-    android:textColor="@color/black"/>
-
-  <TextView
-    style="@style/mainTextView.error"
-    android:text="Hello World" />
-
-  <TextView
-    style="@style/mainTextView.warning"
-    android:text="Hello World" />
-
-  <TextView
-    style="@style/mainTextView.success"
-    android:text="Hello World" />
-
-  <TextView
-    style="@style/mainTextView"
-    android:text="Hello World" />
-
-  <TextView
-    style="@style/mainTextView"
-    android:text="Hello World" />
+  <EditText
+    android:id="@+id/etName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter Name"
+    android:textSize="25sp" />
 
   <Button
+    android:id="@+id/bSave"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="hi"
-    android:textSize="25sp"/>
+    android:layout_marginTop="10dp"
+    android:background="@color/info"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp"
+    android:text="Save"
+    android:textSize="25sp" />
 
 </LinearLayout>
