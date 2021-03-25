@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
       SharedPreferences.Editor editor = sharedPreferences.edit();
       editor.putString("username", etName.getText().toString());
       editor.apply();
+
+      Toast.makeText(getApplicationContext(), "Names save!", Toast.LENGTH_SHORT).show();
     });
   }
 }
