@@ -1,11 +1,13 @@
 package com.chitransh.testrun1;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -40,21 +42,36 @@ public class MainActivity extends AppCompatActivity {
 
       AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
-      builder.setTitle("Are you sure?");
-      builder.setMessage("This name will be saved to the application. Continue?");
+      View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.dialog_alert, null);
 
-      builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+      builder.setView(view);
+
+      AlertDialog dialog = builder.show();
+
+      TextView tvTitle = view.findViewById(R.id.tvTitle);
+      TextView tvText = view.findViewById(R.id.tvText);
+      Button bPositive = view.findViewById(R.id.bPositive);
+      Button bNegative = view.findViewById(R.id.bNegative);
+
+      tvTitle.setText("Are you sure?");
+      tvText.setText("This name will be saved to the application. Continue?");
+
+      bPositive.setText("Yes");
+      bNegative.setText("No");
+
+      bPositive.setOnClickListener(v1 -> {
+        dialog.dismiss();
+        saveName();
+      });
+
+      bNegative.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(DialogInterface dialog, int which) {
-          saveName();
+        public void onClick(View v) {
+          dialog.dismiss();
+          etName.setText("");
         }
       });
 
-      builder.setNegativeButton("No", (dialog, which) -> {
-        etName.setText("");
-      });
-
-      builder.show();
     });
   }
 
