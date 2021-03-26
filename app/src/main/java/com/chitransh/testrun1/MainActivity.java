@@ -49,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
     products.add(new Product("Touchpad", "SDH", 12200, 9));
     products.add(new Product("Cabel", "XDJFYZ", 5, 23000));
 
+    ProductsListAdapter adapter = new ProductsListAdapter(getApplicationContext());
+    adapter.setProducts(products);
 
+    lvMain.setAdapter(adapter);
   }
 
 }
