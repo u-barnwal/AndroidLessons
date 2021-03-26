@@ -1,5 +1,7 @@
 package com.chitransh.testrun1;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -40,14 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
     products = new ArrayList<>();
 
-    products.add(new Product("Mobile", "XYZ", 12200, 23000));
-    products.add(new Product("Laptop", "XYDJZ", 45, 23000));
-    products.add(new Product("Desktop", "XYDFJZ", 12200, 23000));
-    products.add(new Product("Marker", "FWG", 12200, 23000));
-    products.add(new Product("Keyboard", "XYZ", 3, 23000));
-    products.add(new Product("Mouse", "XYZ", 12200, 23000));
-    products.add(new Product("Touchpad", "SDH", 12200, 9));
-    products.add(new Product("Cabel", "XDJFYZ", 5, 23000));
+    Drawable drawable = getResources().getDrawable(R.drawable.ic_launcher_foreground);
+
+    products.add(new Product("Mobile", "XYZ", 12200, 23000, drawable));
+    products.add(new Product("Laptop", "XYDJZ", 45, 23000, drawable));
+    products.add(new Product("Desktop", "XYDFJZ", 12200, 23000, drawable));
+    products.add(new Product("Marker", "FWG", 12200, 23000, drawable));
+    products.add(new Product("Keyboard", "XYZ", 3, 23000, drawable));
+    products.add(new Product("Mouse", "XYZ", 12200, 23000, drawable));
+    products.add(new Product("Touchpad", "SDH", 12200, 9, drawable));
+    products.add(new Product("Cabel", "XDJFYZ", 5, 23000, drawable));
 
     ProductsListAdapter adapter = new ProductsListAdapter(getApplicationContext());
     adapter.setProducts(products);

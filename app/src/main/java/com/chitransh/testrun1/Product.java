@@ -1,15 +1,19 @@
 package com.chitransh.testrun1;
 
+import android.graphics.drawable.Drawable;
+
 public class Product {
 
+  private Drawable drawable;
   private String name, code;
   private float selling, purchase;
 
-  public Product(String name, String code, float selling, float purchase) {
+  public Product(String name, String code, float selling, float purchase, Drawable drawable) {
     this.name = name;
     this.code = code;
     this.selling = selling;
     this.purchase = purchase;
+    this.drawable = drawable;
   }
 
   public String getName() {
@@ -42,5 +46,13 @@ public class Product {
 
   public void setPurchase(float purchase) {
     this.purchase = purchase;
+  }
+
+  public Drawable getDrawable() {
+    return drawable;
+  }
+
+  public void setDrawable(Drawable drawable) {
+    this.drawable = drawable;
   }
 }
