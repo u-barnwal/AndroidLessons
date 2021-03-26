@@ -11,7 +11,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
   private ListView lvMain;
-  private ArrayList list;
+//  private ArrayList list;
+  private ArrayList<Product> products;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -20,22 +21,35 @@ public class MainActivity extends AppCompatActivity {
 
     lvMain = findViewById(R.id.lvMain);
 
-    list = new ArrayList();
+//    list = new ArrayList();
+//
+//    list.add("A");
+//    list.add("B");
+//    list.add("C");
+//    list.add("D");
+//    list.add("E");
+//    list.add("F");
+//    list.add("G");
+//    list.add("G");
+//    list.add("H");
+//    list.add("I");
+//
+//    ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 
-    list.add("A");
-    list.add("B");
-    list.add("C");
-    list.add("D");
-    list.add("E");
-    list.add("F");
-    list.add("G");
-    list.add("G");
-    list.add("H");
-    list.add("I");
+//    lvMain.setAdapter(adapter);
 
-    ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
+    products = new ArrayList<>();
 
-    lvMain.setAdapter(adapter);
+    products.add(new Product("Mobile", "XYZ", 12200, 23000));
+    products.add(new Product("Laptop", "XYDJZ", 45, 23000));
+    products.add(new Product("Desktop", "XYDFJZ", 12200, 23000));
+    products.add(new Product("Marker", "FWG", 12200, 23000));
+    products.add(new Product("Keyboard", "XYZ", 3, 23000));
+    products.add(new Product("Mouse", "XYZ", 12200, 23000));
+    products.add(new Product("Touchpad", "SDH", 12200, 9));
+    products.add(new Product("Cabel", "XDJFYZ", 5, 23000));
+
+
   }
 
 }
