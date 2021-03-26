@@ -8,8 +8,10 @@
 
   <ImageView
     android:id="@+id/ivPhoto"
-    android:layout_width="80dp"
-    android:layout_height="80dp" />
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:scaleType="fitCenter"
+    android:src="@drawable/google_meet_logo" />
 
   <TextView
     android:id="@+id/tvName"
