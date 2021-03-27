@@ -3,9 +3,9 @@
 Collection of **Example Apps** made for teaching students at [Chitransh Computers](http://www.chitransh.co.in/).
 
 ## Quick Links
-- Open [Package Folder](app/src/main/java/com/chitransh/testrun1/)  
+- Open [Package Directory](app/src/main/java/com/chitransh/testrun1/)  
 
-- Open [Resource Folder](app/src/main/res/)
+- Open [Resource Directory](app/src/main/res/)
 
 - View [MainActivity.java](app/src/main/java/com/chitransh/testrun1/MainActivity.java)  
 
@@ -15,9 +15,7 @@ Collection of **Example Apps** made for teaching students at [Chitransh Computer
 To view different programs change the active branch to the topic of the program you want see. To change the branch follow these steps:-  
 
 - Click on dropdown on top-left corner. (Should be on the <i>master</i> by default)
-
 - Click on the topic you want to see
-
 - Voila! There's your program.
 
 ## How is the repo structured?
