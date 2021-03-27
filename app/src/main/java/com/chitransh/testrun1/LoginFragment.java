@@ -1,6 +1,5 @@
 package com.chitransh.testrun1;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 public class LoginFragment extends Fragment {
 
@@ -44,8 +44,10 @@ public class LoginFragment extends Fragment {
     });
 
     tvForgotPassword.setOnClickListener(v -> {
-//      Intent intent = new Intent(getActivity(), ForgotPasswordActivity.class);
-//      startActivity(intent);
+      FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+      fragmentTransaction.replace(R.id.flMain, new ForgotPasswordFragment());
+      fragmentTransaction.addToBackStack("recover_fragment");
+      fragmentTransaction.commit();
     });
 
     return mv;

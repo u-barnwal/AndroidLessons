@@ -17,18 +17,21 @@ public class MainActivity extends AppCompatActivity {
     Button bRecover = findViewById(R.id.bRecover);
     Button bSignup = findViewById(R.id.bSignup);
 
-//      transaction.addToBackStack(null);
-
+    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+    ft.replace(R.id.flMain, new LoginFragment());
+    ft.commit();
 
     bLogin.setOnClickListener(v -> {
       FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
       transaction.replace(R.id.flMain, new LoginFragment());
+      transaction.addToBackStack("login_fragment");
       transaction.commit();
     });
 
     bRecover.setOnClickListener(v -> {
       FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
       transaction.replace(R.id.flMain, new ForgotPasswordFragment());
+      transaction.addToBackStack("recover_fragment");
       transaction.commit();
     });
   }

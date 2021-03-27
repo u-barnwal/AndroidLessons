@@ -16,9 +16,9 @@ public class ForgotPasswordFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     mv = inflater.inflate(R.layout.fragment_forgot_password, container, false);
 
-    TextView tvLogin = mv.findViewById(R.id.tvLogin);
+    TextView tvGoBack = mv.findViewById(R.id.tvGoBack);
 
-    tvLogin.setOnClickListener(v -> {
+    tvGoBack.setOnClickListener(v -> {
       getActivity().onBackPressed();
     });
 
