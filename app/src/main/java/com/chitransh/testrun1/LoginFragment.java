@@ -44,8 +44,8 @@ public class LoginFragment extends Fragment {
     });
 
     tvForgotPassword.setOnClickListener(v -> {
-      Intent intent = new Intent(getActivity(), ForgotPasswordActivity.class);
-      startActivity(intent);
+//      Intent intent = new Intent(getActivity(), ForgotPasswordActivity.class);
+//      startActivity(intent);
     });
 
     return mv;

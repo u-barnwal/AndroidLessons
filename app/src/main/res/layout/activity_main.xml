@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="@color/background"
   tools:context=".MainActivity">
 
+  <FrameLayout
+    android:id="@+id/flMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/layoutButtons" />
+
   <LinearLayout
+    android:id="@+id/layoutButtons"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
     android:gravity="center"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="24dp">
 
     <Button
       android:id="@+id/bLogin"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Login Here" />
+      android:text="Login" />
+
+    <Button
+      android:id="@+id/bRecover"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Recover" />
+
+    <Button
+      android:id="@+id/bSignup"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Signup" />
 
   </LinearLayout>
 
-</ScrollView>
+</RelativeLayout>
