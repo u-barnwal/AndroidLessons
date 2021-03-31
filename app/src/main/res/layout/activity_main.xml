@@ -6,16 +6,18 @@
   android:orientation="vertical"
   tools:context=".MainActivity">
 
-  <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Hello World"
-    android:textSize="25sp" />
-
   <Button
+    android:id="@+id/bPlay"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="hi"
+    android:text="Play"
+    android:textSize="25sp"/>
+
+  <Button
+    android:id="@+id/bStop"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Stop"
     android:textSize="25sp"/>
 
 </LinearLayout>
