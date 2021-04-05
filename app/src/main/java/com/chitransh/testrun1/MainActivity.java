@@ -5,6 +5,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
       String body = etBody.getText().toString();
 
       Intent intent = new Intent(this, MainActivity.class);
+//      intent.putExtra("title", title);
+//      intent.putExtra("body", body);
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
       PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
@@ -38,13 +42,17 @@ public class MainActivity extends AppCompatActivity {
       String channelId = "DEFAULT_NOTIFICATION_CHANNEL";
 //      Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
+//      Drawable myDrawable = getResources().getDrawable(R.drawable.logo);
+//      Bitmap myLogo = ((BitmapDrawable) myDrawable).getBitmap();
+
       NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, channelId)
         .setSmallIcon(R.mipmap.ic_launcher)
         .setContentTitle(title)
         .setContentText(body)
         .setAutoCancel(true)
+//        .setLargeIcon(myLogo)
 //        .setOngoing(true)
-//        .setStyle(new NotificationCompat.BigTextStyle().bigText(body))
+        .setStyle(new NotificationCompat.BigTextStyle().bigText(body))
 //        .setSound(defaultSoundUri)
         .setContentIntent(pendingIntent);
 
