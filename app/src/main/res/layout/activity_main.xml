@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical"
   tools:context=".MainActivity">
 
-  <EditText
-    android:id="@+id/etTitle"
+  <!--  <ScrollView-->
+  <!--    android:layout_width="match_parent"-->
+  <!--    android:layout_height="match_parent">-->
+
+  <!--    <androidx.recyclerview.widget.RecyclerView-->
+  <!--      android:id="@+id/rvList"-->
+  <!--      android:layout_width="match_parent"-->
+  <!--      android:layout_height="match_parent" />-->
+
+  <!--  </ScrollView>-->
+
+  <com.github.islamkhsh.CardSliderViewPager
+    android:id="@+id/slider"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="12dp"
-    android:hint="Title"
-    android:textSize="25sp" />
-
-  <EditText
-    android:id="@+id/etBody"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="12dp"
-    android:hint="Body"
-    android:textSize="25sp" />
-
-  <Button
-    android:id="@+id/bPush"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="12dp"
-    android:text="Push"
-    android:textSize="25sp" />
+    app:auto_slide_time="3"
+    app:cardSlider_otherPagesWidth="24dp"
+    app:cardSlider_pageMargin="12dp"
+    app:cardSlider_smallScaleFactor="0.9" />
 
 </LinearLayout>

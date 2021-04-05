@@ -1,21 +1,13 @@
 package com.chitransh.testrun1;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Build;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 
-import java.util.Random;
+import com.github.islamkhsh.CardSliderViewPager;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,46 +16,17 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    EditText etTitle = findViewById(R.id.etTitle);
-    EditText etBody = findViewById(R.id.etBody);
-    Button bPush = findViewById(R.id.bPush);
+    CardSliderViewPager slider = findViewById(R.id.slider);
 
-    bPush.setOnClickListener(v -> {
-      String title = etTitle.getText().toString();
-      String body = etBody.getText().toString();
+    Drawable movieLogo = getResources().getDrawable(R.drawable.logo);
 
-      Intent intent = new Intent(this, MainActivity.class);
-//      intent.putExtra("title", title);
-//      intent.putExtra("body", body);
-      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    ArrayList<Movie> movies = new ArrayList();
 
-      PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+    movies.add(new Movie("Test A", "Description A", movieLogo));
+    movies.add(new Movie("Test B", "Description B", movieLogo));
+    movies.add(new Movie("Test C", "Description C", movieLogo));
 
-      String channelId = "DEFAULT_NOTIFICATION_CHANNEL";
-//      Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+    slider.setAdapter(new MovieAdapter(movies));
 
-//      Drawable myDrawable = getResources().getDrawable(R.drawable.logo);
-//      Bitmap myLogo = ((BitmapDrawable) myDrawable).getBitmap();
-
-      NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, channelId)
-        .setSmallIcon(R.mipmap.ic_launcher)
-        .setContentTitle(title)
-        .setContentText(body)
-        .setAutoCancel(true)
-//        .setLargeIcon(myLogo)
-//        .setOngoing(true)
-        .setStyle(new NotificationCompat.BigTextStyle().bigText(body))
-//        .setSound(defaultSoundUri)
-        .setContentIntent(pendingIntent);
-
-      NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        NotificationChannel channel = new NotificationChannel(channelId, "Default Notifications", NotificationManager.IMPORTANCE_DEFAULT);
-        notificationManager.createNotificationChannel(channel);
-      }
-
-      notificationManager.notify(new Random().nextInt(), notificationBuilder.build());
-    });
   }
 }
