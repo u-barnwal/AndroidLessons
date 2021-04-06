@@ -27,6 +27,17 @@ public class MainActivity extends AppCompatActivity {
       null // sorting order (pass column names)
     );
 
+//    Cursor cursor = contentResolver.query(
+//      ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+//      new String[]{
+//        ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+//        ContactsContract.CommonDataKinds.Phone.NUMBER,
+//      }, // which all columns you want to select
+//      ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + "=?", // where statement
+//      new String[]{"Doe"}, // where statement values
+//      ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC" // sorting order (pass column names)
+//    );
+
     String contacts = "";
 
     if (cursor != null && cursor.getCount() > 0) {
