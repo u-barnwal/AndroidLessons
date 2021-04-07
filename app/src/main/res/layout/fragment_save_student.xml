@@ -1,13 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:padding="20dp"
   tools:context=".fragments.SaveStudentFragment">
 
-  <TextView
+  <EditText
+    android:id="@+id/etRoll"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="Save Fragment" />
+    android:layout_height="wrap_content"
+    android:hint="Roll"
+    android:inputType="number" />
 
-</RelativeLayout>
+  <EditText
+    android:id="@+id/etName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Name"
+    android:inputType="textCapWords" />
+
+  <EditText
+    android:id="@+id/etAddress"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Address"
+    android:inputType="textMultiLine" />
+
+  <EditText
+    android:id="@+id/etCourse"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Course"
+    android:inputType="textCapWords" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:orientation="horizontal">
+
+    <Button
+      android:id="@+id/bClear"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Clear" />
+
+    <View
+      android:id="@+id/bSave"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Save" />
+
+  </LinearLayout>
+
+</LinearLayout>
