@@ -4,4 +4,5 @@
   android:id="@+id/lvMain"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".fragments.ViewStudentFragment" />
+  tools:context=".fragments.ViewStudentFragment"
+  tools:listitem="@layout/student_list_item" />
