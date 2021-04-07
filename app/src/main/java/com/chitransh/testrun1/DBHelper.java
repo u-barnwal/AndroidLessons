@@ -8,31 +8,51 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
 
   public DBHelper(Context context) {
-    super(context, "TestDB", null, 1);
+    super(context, "TEST_DB", null, 1);
   }
 
   @Override
   public void onCreate(SQLiteDatabase db) {
     db.execSQL(
-      "CREATE TABLE users (" +
+      "CREATE TABLE student (" +
         "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-        "first_name VARCHAR(20), " +
-        "last_name VARCHAR(20) " +
+        "roll INTEGER," +
+        "name VARCHAR(40)," +
+        "address TEXT," +
+        "course VARCHAR(40)," +
+        "photo_uri TEXT DEFAULT NULL" +
         ")"
     );
   }
 
   @Override
   public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-    db.execSQL("DROP TABLE IF EXISTS users");
+    db.execSQL("DROP TABLE IF EXISTS student");
   }
 
-  public boolean insertUser(String firstName, String lastName) {
+  public boolean createStudent(Student student) {
     ContentValues contentValues = new ContentValues();
-    contentValues.put("first_name", firstName);
-    contentValues.put("last_name", lastName);
+    contentValues.put("roll", student.getRoll());
+    contentValues.put("name", student.getName());
+    contentValues.put("address", student.getAddress());
+    contentValues.put("course", student.getCourse());
 
-    return getWritableDatabase().insert("users", null, contentValues) != -1;
+//    long result = getWritableDatabase().insert("student", null, contentValues);
+//    if(result==-1) {
+//      return false;
+//    }
+//    return true;
+
+    return getWritableDatabase().insert("student", null, contentValues) != -1;
+  }
+
+  public void updateStudent(int studentId, Student student) {
+  }
+
+  public void readStudent() {
+  }
+
+  public void deleteStudent(int studentId) {
   }
 
 }
