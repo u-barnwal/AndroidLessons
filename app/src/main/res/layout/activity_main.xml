@@ -1,21 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="vertical"
-  tools:context=".MainActivity">
+  tools:context=".activities.MainActivity">
 
-  <TextView
+  <FrameLayout
+    android:id="@+id/flMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/layoutButtons" />
+
+  <LinearLayout
+    android:id="@+id/layoutButtons"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Hello World"
-    android:textSize="25sp" />
+    android:layout_alignParentBottom="true"
+    android:background="#efefef"
+    android:orientation="horizontal">
 
-  <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="hi"
-    android:textSize="25sp"/>
+    <LinearLayout
+      android:id="@+id/llBtnView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:padding="20dp">
 
-</LinearLayout>
+      <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_view" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llBtnInsert"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:padding="20dp">
+
+      <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_add" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert"
+        android:textColor="@color/black" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</RelativeLayout>
