@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.chitransh.testrun1.DBHelper;
 import com.chitransh.testrun1.R;
 import com.chitransh.testrun1.Student;
 
@@ -47,11 +49,25 @@ public class StudentListAdapter extends BaseAdapter {
     TextView tvName = view.findViewById(R.id.tvName);
     TextView tvCourse = view.findViewById(R.id.tvCourse);
 
+    ImageView ivBtnEdit = view.findViewById(R.id.ivBtnEdit);
+    ImageView ivBtnDelete = view.findViewById(R.id.ivBtnDelete);
+
     Student student = getItem(position);
 
     tvRoll.setText(String.valueOf(student.getRoll()));
     tvName.setText(student.getName());
     tvCourse.setText(student.getCourse());
+
+    ivBtnEdit.setOnClickListener(v -> {
+    });
+
+    ivBtnDelete.setOnClickListener(v -> {
+      DBHelper dbHelper = new DBHelper(context);
+
+      dbHelper.deleteStudent(student.getRoll());
+
+      Toast.makeText(context, "Student deleted!", Toast.LENGTH_SHORT).show();
+    });
 
     return view;
   }
