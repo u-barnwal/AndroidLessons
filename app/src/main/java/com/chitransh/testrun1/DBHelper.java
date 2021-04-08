@@ -47,7 +47,14 @@ public class DBHelper extends SQLiteOpenHelper {
     return getWritableDatabase().insert("student", null, contentValues) != -1;
   }
 
-  public void updateStudent(int studentId, Student student) {
+  public void updateStudent(int roll, Student student) {
+    ContentValues contentValues = new ContentValues();
+    contentValues.put("roll", student.getRoll());
+    contentValues.put("name", student.getName());
+    contentValues.put("address", student.getAddress());
+    contentValues.put("course", student.getCourse());
+
+    getWritableDatabase().update("student", contentValues, "roll=?", new String[]{String.valueOf(roll)});
   }
 
   public Cursor readStudent() {

@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.chitransh.testrun1.DBHelper;
 import com.chitransh.testrun1.R;
@@ -72,7 +73,10 @@ public class ViewStudentFragment extends Fragment {
   }
 
   public void processEdit(Student student) {
+    FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
+    transaction.replace(R.id.flMain, new SaveStudentFragment(student));
+    transaction.commit();
   }
 
   public void processDelete(int roll) {
