@@ -35,6 +35,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
+    implementation 'com.squareup.picasso:picasso:2.71828' // Picasso
     implementation 'com.github.dhaval2404:imagepicker:1.7.5' // ImagePicker
 
     testImplementation 'junit:junit:4.+'

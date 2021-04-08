@@ -4,7 +4,7 @@ public class Student {
 
   private int roll;
 
-  private String name, address, course;
+  private String name, address, course, photoURI;
 
   public int getRoll() {
     return roll;
@@ -36,5 +36,13 @@ public class Student {
 
   public void setCourse(String course) {
     this.course = course;
+  }
+
+  public String getPhotoURI() {
+    return photoURI;
+  }
+
+  public void setPhotoURI(String photoURI) {
+    this.photoURI = photoURI;
   }
 }

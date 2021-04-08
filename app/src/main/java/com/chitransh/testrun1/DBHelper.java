@@ -37,6 +37,7 @@ public class DBHelper extends SQLiteOpenHelper {
     contentValues.put("name", student.getName());
     contentValues.put("address", student.getAddress());
     contentValues.put("course", student.getCourse());
+    contentValues.put("photo_uri", student.getPhotoURI());
 
 //    long result = getWritableDatabase().insert("student", null, contentValues);
 //    if(result==-1) {
@@ -53,6 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
     contentValues.put("name", student.getName());
     contentValues.put("address", student.getAddress());
     contentValues.put("course", student.getCourse());
+    contentValues.put("photo_uri", student.getPhotoURI());
 
     getWritableDatabase().update("student", contentValues, "roll=?", new String[]{String.valueOf(roll)});
   }
