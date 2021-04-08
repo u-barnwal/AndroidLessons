@@ -5,16 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chitransh.testrun1.R;
 import com.chitransh.testrun1.Student;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentListAdapter extends BaseAdapter {
 
   private final Context context;
-  private List<Student> studentList;
+  private List<Student> studentList = new ArrayList<>();
 
   public StudentListAdapter(Context context) {
     this.context = context;
@@ -38,6 +41,18 @@ public class StudentListAdapter extends BaseAdapter {
   @Override
   public View getView(int position, View convertView, ViewGroup parent) {
     View view = LayoutInflater.from(context).inflate(R.layout.student_list_item, null);
+
+    ImageView ivPhoto = view.findViewById(R.id.ivPhoto);
+    TextView tvRoll = view.findViewById(R.id.tvRoll);
+    TextView tvName = view.findViewById(R.id.tvName);
+    TextView tvCourse = view.findViewById(R.id.tvCourse);
+
+    Student student = getItem(position);
+
+    tvRoll.setText(String.valueOf(student.getRoll()));
+    tvName.setText(student.getName());
+    tvCourse.setText(student.getCourse());
+
     return view;
   }
 

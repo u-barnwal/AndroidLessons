@@ -2,6 +2,7 @@ package com.chitransh.testrun1;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -49,7 +50,10 @@ public class DBHelper extends SQLiteOpenHelper {
   public void updateStudent(int studentId, Student student) {
   }
 
-  public void readStudent() {
+  public Cursor readStudent() {
+    Cursor cursor = getWritableDatabase().rawQuery("SELECT * FROM student", null);
+
+    return cursor;
   }
 
   public void deleteStudent(int studentId) {
