@@ -64,6 +64,7 @@ public class ViewStudentFragment extends Fragment {
         student.setName(cursor.getString(2));
         student.setAddress(cursor.getString(3));
         student.setCourse(cursor.getString(4));
+        student.setPhotoURI(cursor.getString(5));
 
         students.add(student);
       }

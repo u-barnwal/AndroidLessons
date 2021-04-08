@@ -1,6 +1,7 @@
 package com.chitransh.testrun1.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.chitransh.testrun1.R;
 import com.chitransh.testrun1.Student;
 import com.chitransh.testrun1.fragments.ViewStudentFragment;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +56,11 @@ public class StudentListAdapter extends BaseAdapter {
     ImageView ivBtnDelete = view.findViewById(R.id.ivBtnDelete);
 
     Student student = getItem(position);
+
+    if (student.getPhotoURI() != null && !student.getPhotoURI().isEmpty()) {
+      Log.e("0000000", "file://" + student.getPhotoURI());
+      Picasso.get().load("file://" + student.getPhotoURI()).into(ivPhoto);
+    }
 
     tvRoll.setText(String.valueOf(student.getRoll()));
     tvName.setText(student.getName());

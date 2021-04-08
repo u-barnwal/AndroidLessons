@@ -184,21 +184,4 @@ public class SaveStudentFragment extends Fragment {
     Toast.makeText(getActivity(), "Student Updated!", Toast.LENGTH_SHORT).show();
   }
 
-//  public static void loadBitmapWithPicasso(Object imagePath, Callback<Bitmap> onLoaded) {
-//    Picasso.get().load(getString(imagePath)).into(new Target() {
-//      @Override
-//      public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-//        if (onLoaded != null) onLoaded.exec(bitmap);
-//      }
-//
-//      @Override
-//      public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-//      }
-//
-//      @Override
-//      public void onPrepareLoad(Drawable placeHolderDrawable) {
-//      }
-//    });
-//  }
-
 }
