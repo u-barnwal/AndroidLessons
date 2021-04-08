@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -22,6 +23,7 @@ public class ViewStudentFragment extends Fragment {
   private View mv;
   private ListView lvMain;
   private StudentListAdapter studentListAdapter;
+  private DBHelper dbHelper;
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,20 +32,25 @@ public class ViewStudentFragment extends Fragment {
     instantiate();
     initialize();
     listen();
+    load();
 
     return mv;
   }
 
   private void instantiate() {
     lvMain = mv.findViewById(R.id.lvMain);
-    studentListAdapter = new StudentListAdapter(getActivity());
+    studentListAdapter = new StudentListAdapter(getActivity(), this);
+    dbHelper = new DBHelper(getActivity());
   }
 
   private void initialize() {
     lvMain.setAdapter(studentListAdapter);
+  }
 
-    DBHelper dbHelper = new DBHelper(getActivity());
+  private void listen() {
+  }
 
+  private void load() {
     Cursor cursor = dbHelper.readStudent();
 
     List<Student> students = new ArrayList<>();
@@ -64,6 +71,14 @@ public class ViewStudentFragment extends Fragment {
     studentListAdapter.setStudentList(students);
   }
 
-  private void listen() {
+  public void processEdit(Student student) {
+
   }
+
+  public void processDelete(int roll) {
+    dbHelper.deleteStudent(roll);
+    Toast.makeText(getActivity(), "Student deleted!", Toast.LENGTH_SHORT).show();
+    load();
+  }
+
 }

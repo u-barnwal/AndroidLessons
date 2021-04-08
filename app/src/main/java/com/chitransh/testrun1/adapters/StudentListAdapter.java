@@ -7,11 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.chitransh.testrun1.DBHelper;
 import com.chitransh.testrun1.R;
 import com.chitransh.testrun1.Student;
+import com.chitransh.testrun1.fragments.ViewStudentFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +18,12 @@ import java.util.List;
 public class StudentListAdapter extends BaseAdapter {
 
   private final Context context;
+  private final ViewStudentFragment viewStudentFragment;
   private List<Student> studentList = new ArrayList<>();
 
-  public StudentListAdapter(Context context) {
+  public StudentListAdapter(Context context, ViewStudentFragment viewStudentFragment) {
     this.context = context;
+    this.viewStudentFragment = viewStudentFragment;
   }
 
   @Override
@@ -59,14 +60,11 @@ public class StudentListAdapter extends BaseAdapter {
     tvCourse.setText(student.getCourse());
 
     ivBtnEdit.setOnClickListener(v -> {
+      viewStudentFragment.processEdit(student);
     });
 
     ivBtnDelete.setOnClickListener(v -> {
-      DBHelper dbHelper = new DBHelper(context);
-
-      dbHelper.deleteStudent(student.getRoll());
-
-      Toast.makeText(context, "Student deleted!", Toast.LENGTH_SHORT).show();
+      viewStudentFragment.processDelete(student.getRoll());
     });
 
     return view;
